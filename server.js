@@ -18,7 +18,7 @@ app.post("/books", (req,res) => {
   const {name} = req.body;
   
   if (!name) {
-    return res.send({message: "Enter title"});
+    return res.send("Enter title");
   }
 
   else {
@@ -34,7 +34,7 @@ app.put("/books", (req,res) => {
   const bookorder = books.findIndex(b => b.id === id);
 
   if (bookorder === -1) {
-    return res.send({ message: "not found" });
+    return res.send("not found");
   }
 
   else {
@@ -49,12 +49,12 @@ app.delete("/books", (req,res) => {
   const bookorder = books.findIndex(b => b.id === id);
 
   if (bookorder === -1) {
-    return res.send({ message: "not found" });
+    return res.send("not found" );
   }
 
   else {
     books.splice(bookIndex,1);
-    res.send({ message: "deleted" });
+    res.send("deleted");
   }
 });
 
